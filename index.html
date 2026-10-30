@@ -160,80 +160,109 @@
             </div>
             <!-- Visual Image Column with Technical Bench Overlay -->
             <div class="lg:col-span-5 relative mt-space-lg lg:mt-0">
-              <div class="relative rounded-xl overflow-hidden shadow-2xl bg-surface-container">
-                <div class="aspect-[4/3] w-full relative">
-                  <img
-                    alt="Mesa de laboratorio de ingeniería electrónica con osciloscopio digital Rigol y placa Zynq DSP de alta velocidad"
-                    class="w-full h-full object-cover"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWXzl_ZYl3dxI3X93Md-6wP8smxUGo484oe96oEFNb0i4HTN3T8te9uRPjgbnI565lwgtCCZKw1GRtB4ll1TBk5X1m8m8p9RapPR1rp7BOESAIJpnfpn6ur3Y3V2ODYsf4MZnStdoVXY3ZU47qjGl26bCnes_YOENyVR8km9aXS0DlB2m2yTJYAuSO2j9TvibyPPGI6ffSyOot0-pERlNBSEIAkZkEW1DUvv2BIAk" />
-                  <!-- Overlay Scrim -->
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent">
-                  </div>
-                </div>
-                <!-- Instrument Status Badge inside Image -->
-                <div
-                  class="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-surface-container-low/90 backdrop-blur-md flex items-center justify-between">
-                  <div class="flex items-center gap-2">
-                    <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
-                    <div>
-                      <p class="font-label-sm text-label-sm text-primary leading-none uppercase">WORKBENCH RIGOL + ZYNQ
-                      </p>
-                      <p class="font-code-md text-[11px] text-tertiary-fixed">CH1: 2.45Vpp | Freq: 10.00MHz</p>
+              <!-- Wrapper SIN overflow-hidden, para que la tarjeta flotante pueda sobresalir -->
+              <div class="relative pb-8 pl-8">
+
+                <!-- Contenedor de la imagen -->
+                <div class="relative rounded-xl overflow-hidden shadow-2xl bg-surface-container">
+                  <div class="relative aspect-[5/4] w-full">
+                    <img alt="Diseñando una PCB con KiCad en el workbench"
+                      class="w-full h-full object-cover object-[25%_35%]" src="./assets/designing_PCB.jpg" />
+
+                    <!-- Scrim suave: solo oscurece el 40% inferior, no toda la foto -->
+                    <div
+                      class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-surface-container-lowest/90 via-surface-container-lowest/40 to-transparent pointer-events-none">
                     </div>
+
+                    <!-- Tarjeta Workbench (dentro de la imagen, abajo) -->
+                    <!-- <div
+                      class="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-lg bg-surface-container/90 backdrop-blur px-5 py-3">
+                      <div>
+                        <p class="font-mono text-sm tracking-widest uppercase">Workbench Rigol + Zynq</p>
+                        <p class="font-mono text-sm text-primary">CH1: 2.45Vpp | Freq: 10.00MHz</p>
+                      </div>
+                      <span class="font-mono text-sm px-3 py-1 rounded bg-surface-container-high">ONLINE</span>
+                    </div> -->
                   </div>
-                  <span
-                    class="font-label-sm text-label-sm text-on-surface-variant px-2 py-1 bg-surface-container-highest rounded">ONLINE</span>
                 </div>
+
+                <!-- Tarjeta Hardware Target (flotando fuera de la imagen, sin tapar la otra) -->
+                <div
+                  class="absolute bottom-0 left-0 rounded-lg bg-surface-container-high shadow-xl px-5 py-3 flex items-center gap-4">
+                  <!-- tu icono aquí -->
+                  <!-- <div>
+                    <p class="font-mono text-xs tracking-widest uppercase text-on-surface-variant">Hardware Target</p>
+                    <p class="font-mono text-lg">FPGA SoC + ARM Dual-Core</p>
+                  </div>
+                </div> -->
+
               </div>
-              <!-- Decorative PCB Coordinates Card -->
+              <!-- Instrument Status Badge inside Image -->
               <div
-                class="hidden sm:flex absolute -bottom-6 -left-6 bg-surface-container-high/95 p-3 rounded-lg shadow-xl items-center gap-3">
-                <span class="material-symbols-outlined text-tertiary-fixed text-[24px]">developer_board</span>
-                <div class="flex flex-col">
-                  <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">HARDWARE TARGET</span>
-                  <span class="font-code-md text-code-md text-primary">FPGA SoC + ARM Dual-Core</span>
+                class="absolute bottom-4 left-4 right-4 p-3 rounded-lg bg-surface-container-low/90 backdrop-blur-md flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+                  <div>
+                    <p class="font-label-sm text-label-sm text-primary leading-none uppercase">WORKBENCH RIGOL + ZYNQ
+                    </p>
+                    <p class="font-code-md text-[11px] text-tertiary-fixed">CH1: 2.45Vpp | Freq: 10.00MHz</p>
+                  </div>
                 </div>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant px-2 py-1 bg-surface-container-highest rounded">ONLINE</span>
+              </div>
+            </div>
+            <!-- Decorative PCB Coordinates Card -->
+            <div
+              class="hidden sm:flex absolute -bottom-6 -left-6 bg-surface-container-high/95 p-3 rounded-lg shadow-xl items-center gap-3">
+              <span class="material-symbols-outlined text-tertiary-fixed text-[24px]">developer_board</span>
+              <div class="flex flex-col">
+                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">HARDWARE TARGET</span>
+                <span class="font-code-md text-code-md text-primary">FPGA SoC + ARM Dual-Core</span>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- PROJECTS SECTION (id="proyectos") -->
-      <section class="w-full py-space-2xl bg-surface" id="proyectos">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
-          <!-- Section Header -->
-          <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
-            <div class="flex flex-col gap-space-xs">
-              <div class="flex items-center gap-2">
-                <span class="h-0.5 w-6 bg-tertiary-fixed"></span>
-              </div>
-              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Projects</h2>
+    </div>
+    </section>
+    <!-- PROJECTS SECTION (id="proyectos") -->
+    <section class="w-full py-space-2xl bg-surface" id="proyectos">
+      <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
+        <!-- Section Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+          <div class="flex flex-col gap-space-xs">
+            <div class="flex items-center gap-2">
+              <span class="h-0.5 w-6 bg-tertiary-fixed"></span>
             </div>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
-              Developments in analog, digital, and power electronics built with strict tolerances, thermal testing,
-              and precision signal routing.
-            </p>
+            <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Projects</h2>
           </div>
-          <!-- Projects Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            <!-- Project 1 -->
-            <article
-              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
-              <div class="flex flex-col gap-space-md">
-                <div class="flex items-center justify-between">
-                  <span class="font-code-md text-code-md text-tertiary-fixed">// Stepper Motor Control Through Photoresistor Response </span>
-                  <!-- <span
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            Developments in analog, digital, and power electronics built with strict tolerances, thermal testing,
+            and precision signal routing.
+          </p>
+        </div>
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+          <!-- Project 1 -->
+          <article
+            class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
+            <div class="flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <span class="font-code-md text-code-md text-tertiary-fixed">// Stepper Motor Control Through
+                  Photoresistor Response </span>
+                <!-- <span
                     class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">OPERACIONAL</span> -->
-                </div>
-                <h3
-                  class="font-headline-md text-headline-md text-primary group-hover:text-tertiary-fixed transition-colors">
-                  Smart Blackout
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  This project was meant to improve my sleep quality by creating a blackout curtain that folds when receiving sunglight in the morning, or after a certain hour, and extends when it gets dark. This embedded system included an ESP32 microcontroller, photoresistor sensor, and stepper motor.
-                </p>
-                <!-- <div class="flex flex-wrap gap-1.5 pt-2">
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-primary group-hover:text-tertiary-fixed transition-colors">
+                Smart Blackout
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                This project was meant to improve my sleep quality by creating a blackout curtain that folds when
+                receiving sunglight in the morning, or after a certain hour, and extends when it gets dark. This
+                embedded system included an ESP32 microcontroller, photoresistor sensor, and stepper motor.
+              </p>
+              <!-- <div class="flex flex-wrap gap-1.5 pt-2">
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">ARM
                     Cortex</span>
@@ -245,39 +274,41 @@
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm">Altium</span>
                 </div> -->
-              </div>
-              <div class="pt-space-lg mt-space-md flex items-center justify-between">
-                <!-- <span class="font-code-md text-code-md text-outline">v2.1 // 4-LAYER FR4</span> -->
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/1Hm__j03WqQmWz-28uKkhapCQT7U7WuD1/view?usp=drive_link"
-                      target="_blank">Demo</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/1_t6StNnhFqGyOzIfluoFGWKFbAmCmLLT/view?usp=drive_link"
-                      target="_blank">Project Files</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-              </div>
-            </article>
-            <!-- Project 2 -->
-            <article
-              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
-              <div class="flex flex-col gap-space-md">
-                <div class="flex items-center justify-between">
-                  <span class="font-code-md text-code-md text-secondary-fixed">// Power Supply & Regulator with Rectifier & Heatsink</span>
+            </div>
+            <div class="pt-space-lg mt-space-md flex items-center justify-between">
+              <!-- <span class="font-code-md text-code-md text-outline">v2.1 // 4-LAYER FR4</span> -->
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/file/d/1Hm__j03WqQmWz-28uKkhapCQT7U7WuD1/view?usp=drive_link"
+                    target="_blank">Demo</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/drive/folders/1ZulscFdb2dDT2pOat_Dcd0X00L93-seo?usp=sharing"
+                    target="_blank">Project Files</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </article>
+          <!-- Project 2 -->
+          <article
+            class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
+            <div class="flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <span class="font-code-md text-code-md text-secondary-fixed">// Power Supply & Regulator with Rectifier
+                  & Heatsink</span>
 
-                </div>
-                <h3
-                  class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
-                  Power Supply & Regulator
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  This project was meant to linearly regulate the incoming power from the power supply to deliver 14 V at a sustained current up to 750 mA, and turn off once reached 1 A current.
-                </p>
-                <!-- <div class="flex flex-wrap gap-1.5 pt-2">
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
+                Power Supply & Regulator
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                This project was meant to linearly regulate the incoming power from the power supply to deliver 14 V at
+                a sustained current up to 750 mA, and turn off once reached 1 A current.
+              </p>
+              <!-- <div class="flex flex-wrap gap-1.5 pt-2">
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">DSP
                     Core</span>
@@ -290,43 +321,47 @@
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">C/C++</span>
                 </div> -->
-              </div>
-              <div class="pt-space-lg mt-space-md flex items-center justify-between">
-                <!-- <span class="font-code-md text-code-md text-outline">v1.8 // CMRR &gt;115dB</span> -->
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+            </div>
+            <div class="pt-space-lg mt-space-md flex items-center justify-between">
+              <!-- <span class="font-code-md text-code-md text-outline">v1.8 // CMRR &gt;115dB</span> -->
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
 
-                  <span><a href="https://drive.google.com/file/d/1hf8HaXdlLlt2WsPdjlF7i-DeBSJCuMGH/view?usp=sharing"
-                      target="_blank">Demo</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/1wGx0bL5cNMQ2IA2JcoVW-K2ItBgTa0zX/view?usp=drive_link"
-                      target="_blank">Project Files</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-              </div>
-            </article>
-            <!-- Project 3 -->
-            <article
-              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
-              <div class="flex flex-col gap-space-md">
-                <div class="flex items-center justify-between">
-                  <span class="font-code-md text-code-md text-tertiary-fixed">// Python Analog Discovery test automation for finding hardware IV response
-                    </span>
-                  <!-- <span
+                <span><a href="https://drive.google.com/file/d/1hf8HaXdlLlt2WsPdjlF7i-DeBSJCuMGH/view?usp=sharing"
+                    target="_blank">Demo</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/file/d/1wGx0bL5cNMQ2IA2JcoVW-K2ItBgTa0zX/view?usp=sharing"
+                    target="_blank">Project Files</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </article>
+          <!-- Project 3 -->
+          <article
+            class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
+            <div class="flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <span class="font-code-md text-code-md text-tertiary-fixed">// Python Analog Discovery test automation
+                  for finding hardware IV response
+                </span>
+                <!-- <span
                     class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">EFICIENTE
                     97.8%</span> -->
-                </div>
-                <h3
-                  class="font-headline-md text-headline-md text-primary group-hover:text-tertiary-fixed transition-colors">
-                  Memristor Device Characterization
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                 This project focused on automating the testing and plotting the IV response of the only commercially available memristors back then, which are able to perform "in-memory processing", meaning their output is dependent on real and past time inputs. The automation tool is able to sweep frequency, voltage, and generate individual test plots as well as comprehensive plots.
-                </p>
-                <!-- <div class="flex flex-wrap gap-1.5 pt-2">
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-primary group-hover:text-tertiary-fixed transition-colors">
+                Memristor Device Characterization
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                This project focused on automating the testing and plotting the IV response of the only commercially
+                available memristors back then, which are able to perform "in-memory processing", meaning their output
+                is dependent on real and past time inputs. The automation tool is able to sweep frequency, voltage, and
+                generate individual test plots as well as comprehensive plots.
+              </p>
+              <!-- <div class="flex flex-wrap gap-1.5 pt-2">
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">GaN
                     FETs</span>
@@ -339,40 +374,43 @@
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-secondary font-label-sm text-label-sm">KiCAD</span>
                 </div> -->
-              </div>
-              <div class="pt-space-lg mt-space-md flex items-center justify-between">
-                <!-- <span class="font-code-md text-code-md text-outline">v3.0 // 1.5kW INVERTER</span> -->
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/1oncJY1jbXTFMZVH6akEvqQGLUQ6_wf47/view?usp=sharing"
-                      target="_blank">Demo</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="#"
-                      target="_blank">Project Files</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-              </div>
-            </article>
-            <!-- Project 4 (Extra for visual balance) -->
-            <article
-              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
-              <div class="flex flex-col gap-space-md">
-                <div class="flex items-center justify-between">
-                  <span class="font-code-md text-code-md text-secondary-fixed">// FPGA Signal I/O Logic with Verilog</span>
-                  <!-- <span
+            </div>
+            <div class="pt-space-lg mt-space-md flex items-center justify-between">
+              <!-- <span class="font-code-md text-code-md text-outline">v3.0 // 1.5kW INVERTER</span> -->
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/file/d/1oncJY1jbXTFMZVH6akEvqQGLUQ6_wf47/view?usp=sharing"
+                    target="_blank">Demo</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/drive/folders/1yAaR-LV135h-ngFEQpU34lSDFY7h3K1H?usp=sharing"
+                    target="_blank">Project Files</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </article>
+          <!-- Project 4 (Extra for visual balance) -->
+          <article
+            class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
+            <div class="flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <span class="font-code-md text-code-md text-secondary-fixed">// FPGA Signal I/O Logic with
+                  Verilog</span>
+                <!-- <span
                     class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">PRODUCCIÓN</span> -->
-                </div>
-                <h3
-                  class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
-                  FPGA Processor for Drone ADC
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  This project focused on developing the digital logic and testbench utilizing hardware-descripitive language to simulate the incoming signal of a drone ADC to process real-time external environment data from its sensors.
-                </p>
-                <!-- <div class="flex flex-wrap gap-1.5 pt-2">
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
+                FPGA Processor for Drone ADC
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                This project focused on developing the digital logic and testbench utilizing hardware-descripitive
+                language to simulate the incoming signal of a drone ADC to process real-time external environment data
+                from its sensors.
+              </p>
+              <!-- <div class="flex flex-wrap gap-1.5 pt-2">
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">SCPI
                     / VISA</span>
@@ -386,41 +424,45 @@
                     class="px-2.5 py-1 rounded bg-surface-container-high text-tertiary-fixed font-label-sm text-label-sm">Automated
                     QA</span>
                 </div> -->
-              </div>
-              <div class="pt-space-lg mt-space-md flex items-center justify-between">
-                <!-- <span class="font-code-md text-code-md text-outline">v2.5 // SCPI PROTOCOL</span> -->
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/1JQsaOXt-nvqlAKTtCMt0Y8hP34UEwy2P/view?usp=sharing"
-                      target="_blank">Demo</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/1fFuePHTDIYA5IF7Io6FCZqVDSmSLOFFV/view?usp=drive_link"
-                      target="_blank">Project Files</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-              </div>
-            </article>
-            <!-- Project 5 (Extra for visual balance) -->
-            <article
-              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
-              <div class="flex flex-col gap-space-md">
-                <div class="flex items-center justify-between">
-                  <span class="font-code-md text-code-md text-secondary-fixed">// Optical Transmitter-Receiver -
-                    HAVE</span>
-                  <!-- <span
+            </div>
+            <div class="pt-space-lg mt-space-md flex items-center justify-between">
+              <!-- <span class="font-code-md text-code-md text-outline">v2.5 // SCPI PROTOCOL</span> -->
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/file/d/1JQsaOXt-nvqlAKTtCMt0Y8hP34UEwy2P/view?usp=sharing"
+                    target="_blank">Demo</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/drive/folders/1CvmihaLHorVbx-xs4V_su_g4rO82Dh2Q?usp=sharing"
+                    target="_blank">Project Files</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </article>
+          <!-- Project 5 (Extra for visual balance) -->
+          <article
+            class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
+            <div class="flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <span class="font-code-md text-code-md text-secondary-fixed">// Optical Transmitter-Receiver -
+                  HAVE</span>
+                <!-- <span
                     class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">PRODUCCIÓN</span> -->
-                </div>
-                <h3
-                  class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
-                  Optical Transmitter-Receiver - HAVE
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                 This was a 4-person team project for the University of Kansas Capstone. Each year, every senior performs 2 projects to prepare for Capstone, including the Optical Transmitter-Receiver project. It required encoding and decoding and electrical signal through PLL + VCO, and optically transmitting it though the air, at a distance. Our team broke the all-time university distance record, registering 3.4 m between transmitter and receiver, limited by the testing equipment cable length.
-                </p>
-                <!-- <div class="flex flex-wrap gap-1.5 pt-2">
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
+                Optical Transmitter-Receiver - HAVE
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                This was a 4-person team project for the University of Kansas Capstone. Each year, every senior performs
+                2 projects to prepare for Capstone, including the Optical Transmitter-Receiver project. It required
+                encoding and decoding and electrical signal through PLL + VCO, and optically transmitting it though the
+                air, at a distance. Our team broke the all-time university distance record, registering 3.4 m between
+                transmitter and receiver, limited by the testing equipment cable length.
+              </p>
+              <!-- <div class="flex flex-wrap gap-1.5 pt-2">
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">SCPI
                     / VISA</span>
@@ -434,40 +476,43 @@
                     class="px-2.5 py-1 rounded bg-surface-container-high text-tertiary-fixed font-label-sm text-label-sm">Automated
                     QA</span>
                 </div> -->
-              </div>
-              <div class="pt-space-lg mt-space-md flex items-center justify-between">
-                <!-- <span class="font-code-md text-code-md text-outline">v2.5 // SCPI PROTOCOL</span> -->
-                <!-- <button
+            </div>
+            <div class="pt-space-lg mt-space-md flex items-center justify-between">
+              <!-- <span class="font-code-md text-code-md text-outline">v2.5 // SCPI PROTOCOL</span> -->
+              <!-- <button
                   class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
                   <span><a href="https://drive.google.com/file/d/115tL_TMG8Zzfik2COGOgIWDc9iifhC3k/view?usp=sharing"
                       target="_blank">Demo</a></span>
                   <span class="material-symbols-outlined text-[16px]">open_in_new</span>
                 </button> -->
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/115tL_TMG8Zzfik2COGOgIWDc9iifhC3k/view?usp=sharing"
-                      target="_blank">Project Files</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-              </div>
-            </article>
-            <!-- Project 6 (Extra for visual balance) -->
-            <article
-              class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
-              <div class="flex flex-col gap-space-md">
-                <div class="flex items-center justify-between">
-                  <span class="font-code-md text-code-md text-secondary-fixed">// Gardener Robot - in Progress</span>
-                  <!-- <span
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/file/d/115tL_TMG8Zzfik2COGOgIWDc9iifhC3k/view?usp=sharing"
+                    target="_blank">Project Files</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </article>
+          <!-- Project 6 (Extra for visual balance) -->
+          <article
+            class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group">
+            <div class="flex flex-col gap-space-md">
+              <div class="flex items-center justify-between">
+                <span class="font-code-md text-code-md text-secondary-fixed">// Gardener Robot - in Progress</span>
+                <!-- <span
                     class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-sm text-label-sm">PRODUCCIÓN</span> -->
-                </div>
-                <h3
-                  class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
-                  Gardener Robot - in Progress
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  This project focuses on developing an autonomous robot that navigates through a 15x20m long garden, cutting and watering grass, while applying pesticide to weed plants, accordingly to the weather. Technologies and skills applied include Raspberry Pi for physical control, weather information access, sensor feedback loops, and CNN training, 3D design, and PCB design.
-                </p>
-                <!-- <div class="flex flex-wrap gap-1.5 pt-2">
+              </div>
+              <h3
+                class="font-headline-md text-headline-md text-primary group-hover:text-secondary-fixed transition-colors">
+                Gardener Robot - in Progress
+              </h3>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                This project focuses on developing an autonomous robot that navigates through a 15x20m long garden,
+                cutting and watering grass, while applying pesticide to weed plants, accordingly to the weather.
+                Technologies and skills applied include Raspberry Pi for physical control, weather information access,
+                sensor feedback loops, and CNN training, 3D design, and PCB design.
+              </p>
+              <!-- <div class="flex flex-wrap gap-1.5 pt-2">
                   <span
                     class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">SCPI
                     / VISA</span>
@@ -481,176 +526,175 @@
                     class="px-2.5 py-1 rounded bg-surface-container-high text-tertiary-fixed font-label-sm text-label-sm">Automated
                     QA</span>
                 </div> -->
-              </div>
-              <div class="pt-space-lg mt-space-md flex items-center justify-between">
-                <!-- <span class="font-code-md text-code-md text-outline">v2.5 // SCPI PROTOCOL</span> -->
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="https://drive.google.com/file/d/1RlLTLulTI_kHpbk3Prf9X_g5gz1Bp5Co/view?usp=sharing"
-                      target="_blank">Demo</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-
-                <button
-                  class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
-                  <span><a href="#"
-                      target="_blank">Project Files</a></span>
-                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-                </button>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </section>
-      <!-- TOOLS / HERRAMIENTAS SECTION (id="herramientas") -->
-      <section class="w-full py-space-2xl bg-surface-container-lowest" id="herramientas">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
-          <div class="flex flex-col gap-space-xs">
-            <div class="flex items-center gap-2">
-              <span class="h-0.5 w-6 bg-secondary-fixed"></span>
-              <!-- <span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest">INSTRUMENTACIÓN
-                &amp; SOFTWARE</span> -->
             </div>
-            <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Skills</h2>
-            <!-- <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            <div class="pt-space-lg mt-space-md flex items-center justify-between">
+              <!-- <span class="font-code-md text-code-md text-outline">v2.5 // SCPI PROTOCOL</span> -->
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="https://drive.google.com/file/d/1RlLTLulTI_kHpbk3Prf9X_g5gz1Bp5Co/view?usp=sharing"
+                    target="_blank">Demo</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+
+              <button
+                class="inline-flex items-center gap-2 px-space-md py-2 rounded bg-tertiary-container text-on-tertiary font-label-md text-label-md font-semibold uppercase hover:bg-tertiary-fixed transition-colors">
+                <span><a href="#" target="_blank">Project Files</a></span>
+                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+    <!-- TOOLS / HERRAMIENTAS SECTION (id="herramientas") -->
+    <section class="w-full py-space-2xl bg-surface-container-lowest" id="herramientas">
+      <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
+        <div class="flex flex-col gap-space-xs">
+          <div class="flex items-center gap-2">
+            <span class="h-0.5 w-6 bg-secondary-fixed"></span>
+            <!-- <span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest">INSTRUMENTACIÓN
+                &amp; SOFTWARE</span> -->
+          </div>
+          <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Skills</h2>
+          <!-- <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, expedita?
             </p> -->
-          </div>
-          <!-- Tools Grid -->
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-space-md">
-            <!-- Tool 1 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">grid_view</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">EDA CAD</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">FPGAs</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet, consectetur
+        </div>
+        <!-- Tools Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-space-md">
+          <!-- Tool 1 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">grid_view</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">EDA CAD</span> -->
+            </div>
+            <span class="font-headline-sm text-headline-sm text-primary">FPGAs</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet, consectetur
                 adipisicing elit. Aspernatur, enim.</span> -->
+          </div>
+          <!-- Tool 2 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-secondary text-[26px]">schema</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">OPEN EDA</span> -->
             </div>
-            <!-- Tool 2 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-secondary text-[26px]">schema</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">OPEN EDA</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">Microcontrollers</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum, dolor sit amet consectetur
+            <span class="font-headline-sm text-headline-sm text-primary">Microcontrollers</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum, dolor sit amet consectetur
                 adipisicing elit. Quis, numquam.</span> -->
+          </div>
+          <!-- Tool 3 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">show_chart</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">MODELADO</span> -->
             </div>
-            <!-- Tool 3 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">show_chart</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">MODELADO</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">Sensors</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
+            <span class="font-headline-sm text-headline-sm text-primary">Sensors</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Repudiandae, illo!</span> -->
+          </div>
+          <!-- Tool 4 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-secondary-fixed text-[26px]">waves</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">METROLOGÍA</span> -->
             </div>
-            <!-- Tool 4 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-secondary-fixed text-[26px]">waves</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">METROLOGÍA</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">PCBA design</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
+            <span class="font-headline-sm text-headline-sm text-primary">PCBA design</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Facere, deserunt.</span> -->
+          </div>
+          <!-- Tool 5 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">terminal</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">LÓGICA</span> -->
             </div>
-            <!-- Tool 5 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">terminal</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">LÓGICA</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">3D design</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
+            <span class="font-headline-sm text-headline-sm text-primary">3D design</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Illum, vel.</span> -->
+          </div>
+          <!-- Tool 6 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-secondary text-[26px]">code</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">FIRMWARE</span> -->
             </div>
-            <!-- Tool 6 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-secondary text-[26px]">code</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">FIRMWARE</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">Network Analyzers</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
+            <span class="font-headline-sm text-headline-sm text-primary">Network Analyzers</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Rem, nihil!</span> -->
+          </div>
+          <!-- Tool 7 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">memory</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">HARDWARE HDL</span> -->
             </div>
-            <!-- Tool 7 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-tertiary-fixed text-[26px]">memory</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">HARDWARE HDL</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">Electrical Testing (oscilloscopes)</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum, dolor sit amet consectetur
+            <span class="font-headline-sm text-headline-sm text-primary">Electrical Testing (oscilloscopes)</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum, dolor sit amet consectetur
                 adipisicing elit. Molestias, dolor?</span> -->
+          </div>
+          <!-- Tool 8 -->
+          <div
+            class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
+            <div class="flex items-center justify-between">
+              <span class="material-symbols-outlined text-secondary-fixed text-[26px]">developer_board</span>
+              <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">MICROCONTROLADORES</span> -->
             </div>
-            <!-- Tool 8 -->
-            <div
-              class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-row items-center gap-3">
-              <div class="flex items-center justify-between">
-                <span class="material-symbols-outlined text-secondary-fixed text-[26px]">developer_board</span>
-                <!-- <span class="font-label-sm text-label-sm text-on-surface-variant uppercase">MICROCONTROLADORES</span> -->
-              </div>
-              <span class="font-headline-sm text-headline-sm text-primary">Spectrum Analyzers</span>
-              <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
+            <span class="font-headline-sm text-headline-sm text-primary">Spectrum Analyzers</span>
+            <!-- <span class="font-body-sm text-body-sm text-on-surface-variant">Lorem ipsum dolor sit amet consectetur
                 adipisicing elit. Aperiam, excepturi.</span> -->
-            </div>
           </div>
         </div>
-      </section>
-      <!-- ABOUT ME SECTION (id="sobre-mi") -->
-      <section class="w-full py-space-2xl bg-surface" id="sobre-mi">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
-            <!-- Left: Identification Specs Column -->
-            <div class="lg:col-span-4 flex flex-col gap-space-md">
-              <div class="flex items-center gap-2">
-                <span class="h-0.5 w-6 bg-tertiary-fixed"></span>
-                <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-widest">PROFESSIONAL
-                  PROFILE</span>
+      </div>
+    </section>
+    <!-- ABOUT ME SECTION (id="sobre-mi") -->
+    <section class="w-full py-space-2xl bg-surface" id="sobre-mi">
+      <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+          <!-- Left: Identification Specs Column -->
+          <div class="lg:col-span-4 flex flex-col gap-space-md">
+            <div class="flex items-center gap-2">
+              <span class="h-0.5 w-6 bg-tertiary-fixed"></span>
+              <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-widest">PROFESSIONAL
+                PROFILE</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">About Me</h2>
+            <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-3">
+              <div class="flex justify-between items-start gap-4 pb-2">
+                <span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">DISCIPLINE:</span>
+                <span class="font-code-md text-code-md text-primary text-right">Electrical & Embedded Systems
+                  Engineer</span>
               </div>
-              <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">About Me</h2>
-              <div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-3">
-                <div class="flex justify-between items-start gap-4 pb-2">
-                  <span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">DISCIPLINE:</span>
-                  <span class="font-code-md text-code-md text-primary text-right">Electrical & Embedded Systems
-                    Engineer</span>
-                </div>
-                <!-- <div class="flex justify-between items-start gap-4 pb-2">
+              <!-- <div class="flex justify-between items-start gap-4 pb-2">
                   <span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">FOCUS:</span>
                   <span class="font-code-md text-code-md text-tertiary-fixed text-right">Lorem ipsum dolor sit
                     amet.</span>
                 </div> -->
-                <div class="flex justify-between items-start gap-4">
-                  <span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">STATUS:</span>
-                  <span class="font-code-md text-code-md text-secondary-fixed text-right">Available for
-                    Consulting</span>
-                </div>
+              <div class="flex justify-between items-start gap-4">
+                <span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">STATUS:</span>
+                <span class="font-code-md text-code-md text-secondary-fixed text-right">Available for
+                  Consulting</span>
               </div>
             </div>
-            <!-- Right: Structured Editorial Text (Lorem Ipsum as requested) -->
-            <div class="lg:col-span-8 flex flex-col gap-space-md">
-              <p class="font-body-lg text-body-lg text-primary leading-relaxed">
-                I studied electronic engineering and physics on a full scholarship at the University of Kansas, where I
-                worked on projects in power, telecommunications, electronics, and optics, including an optical
-                transmitter and receiver that broke the university's all-time distance record.
-                I enjoy spotting problems and finding ways to make existing processes more efficient, solving them by
-                building a device or by automating equipment. I recently started posting content from my home projects
-                on my Instagram account, feel free to check it out at @...
-              </p>
-              <!-- <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          </div>
+          <!-- Right: Structured Editorial Text (Lorem Ipsum as requested) -->
+          <div class="lg:col-span-8 flex flex-col gap-space-md">
+            <p class="font-body-lg text-body-lg text-primary leading-relaxed">
+              I studied electronic engineering and physics on a full scholarship at the University of Kansas, where I
+              worked on projects in power, telecommunications, electronics, and optics, including an optical
+              transmitter and receiver that broke the university's all-time distance record.
+              I enjoy spotting problems and finding ways to make existing processes more efficient, solving them by
+              building a device or by automating equipment. I recently started posting content from my home projects
+              on my Instagram account, feel free to check it out at @...
+            </p>
+            <!-- <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
                 laborum. Integrando microcontroladores STM32 con arquitectura ARM, periféricos de comunicaciones de bajo
@@ -663,132 +707,134 @@
                 gravida. Pasión dedicada a cerrar la brecha entre la teoría analítica de control y el comportamiento
                 físico real en el banco de pruebas de laboratorio.
               </p> -->
-              <!-- Core Principles Grid -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-sm">
-                <div class="p-space-sm rounded bg-surface-container-low">
-                  <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase">01 / PRECISIÓN</span>
-                  <p class="font-body-sm text-body-sm text-on-surface mt-1">Cálculo riguroso de impedancia diferencial e
-                    integridad de señal.</p>
-                </div>
-                <div class="p-space-sm rounded bg-surface-container-low">
-                  <span class="font-label-sm text-label-sm text-secondary-fixed uppercase">02 / ROBUSTEZ</span>
-                  <p class="font-body-sm text-body-sm text-on-surface mt-1">Protección galvánica contra transitorios ESD
-                    y estabilidad térmica.</p>
-                </div>
-                <div class="p-space-sm rounded bg-surface-container-low">
-                  <span class="font-label-sm text-label-sm text-secondary uppercase">03 / METROLOGÍA</span>
-                  <p class="font-body-sm text-body-sm text-on-surface mt-1">Validación experimental completa antes del
-                    paso a producción fab.</p>
-                </div>
+            <!-- Core Principles Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-sm">
+              <div class="p-space-sm rounded bg-surface-container-low">
+                <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase">01 / PRECISIÓN</span>
+                <p class="font-body-sm text-body-sm text-on-surface mt-1">Cálculo riguroso de impedancia diferencial e
+                  integridad de señal.</p>
+              </div>
+              <div class="p-space-sm rounded bg-surface-container-low">
+                <span class="font-label-sm text-label-sm text-secondary-fixed uppercase">02 / ROBUSTEZ</span>
+                <p class="font-body-sm text-body-sm text-on-surface mt-1">Protección galvánica contra transitorios ESD
+                  y estabilidad térmica.</p>
+              </div>
+              <div class="p-space-sm rounded bg-surface-container-low">
+                <span class="font-label-sm text-label-sm text-secondary uppercase">03 / METROLOGÍA</span>
+                <p class="font-body-sm text-body-sm text-on-surface mt-1">Validación experimental completa antes del
+                  paso a producción fab.</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- CONTACT SECTION (id="contacto") - NO FORM AS STRICTLY REQUIRED -->
-      <section class="w-full py-space-2xl bg-surface-container-lowest" id="contacto">
-        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
-          <!-- Section Header -->
-          <div class="flex flex-col gap-space-xs">
-            <div class="flex items-center gap-2">
-              <span class="h-0.5 w-6 bg-secondary-fixed"></span>
-              <span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest">DIRECT
-                COMMUNICATION CHANNELS</span>
-            </div>
-            <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Contact</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
-              Connect directly through professional channels and engineering networks. No lengthy forms or
-              intermediaries.
-            </p>
+      </div>
+    </section>
+    <!-- CONTACT SECTION (id="contacto") - NO FORM AS STRICTLY REQUIRED -->
+    <section class="w-full py-space-2xl bg-surface-container-lowest" id="contacto">
+      <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin flex flex-col gap-space-xl">
+        <!-- Section Header -->
+        <div class="flex flex-col gap-space-xs">
+          <div class="flex items-center gap-2">
+            <span class="h-0.5 w-6 bg-secondary-fixed"></span>
+            <span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-widest">DIRECT
+              COMMUNICATION CHANNELS</span>
           </div>
-          <!-- Contact Cards Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
-            <!-- LinkedIn -->
-            <a class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between"
-              href="https://www.linkedin.com/in/felipetala/" rel="noopener noreferrer" target="_blank">
-              <div class="flex flex-col gap-space-sm">
-                <div
-                  class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:text-tertiary-fixed transition-colors">
-                  <span class="material-symbols-outlined text-[28px]">work</span>
-                </div>
-                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">PROFESSIONAL
-                  NETWORK</span>
-                <h3
-                  class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed transition-colors">
-                  LinkedIn</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">Corporate connections, work experience, and
-                  technical hardware publications.</p>
-              </div>
-              <div class="pt-space-md mt-space-md flex items-center justify-between">
-                <span class="font-label-sm text-label-sm text-on-surface uppercase">CONNECT</span>
-                <span
-                  class="material-symbols-outlined text-tertiary-fixed text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </a>
-            <!-- GitHub -->
-            <a class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between"
-              href="" rel="noopener noreferrer" target="_blank">
-              <div class="flex flex-col gap-space-sm">
-                <div
-                  class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:text-tertiary-fixed transition-colors">
-                  <span class="material-symbols-outlined text-[28px]">code</span>
-                </div>
-                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">REPOSITORIES
-                  HARDWARE</span>
-                <h3
-                  class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed transition-colors">
-                  GitHub</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">Gerber Manufacturing Files,
-                  KiCAD/Altium schematics and firmware in C/C++.</p>
-              </div>
-              <div class="pt-space-md mt-space-md flex items-center justify-between">
-                <span class="font-label-sm text-label-sm text-on-surface uppercase">REPOSITORY</span>
-                <span
-                  class="material-symbols-outlined text-tertiary-fixed text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </div>
-            </a>
-            <!-- Email -->
-            <a class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between"
-              href="mailto:felipetala.eng@gmail.com">
-              <div class="flex flex-col gap-space-sm">
-                <div
-                  class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:text-secondary-fixed transition-colors">
-                  <span class="material-symbols-outlined text-[28px]">mail</span>
-                </div>
-                <span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">DIRECT EMAIL</span>
-                <h3
-                  class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary-fixed transition-colors">
-                  Email</h3>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">Design proposals, consulting contracts, or architectural reviews.</p>
-              </div>
-              <div class="pt-space-md mt-space-md flex items-center justify-between">
-                <span class="font-label-sm text-label-sm text-on-surface uppercase">SEND MESSAGE</span>
-                <span
-                  class="material-symbols-outlined text-secondary-fixed text-[18px] group-hover:translate-x-1 transition-transform">send</span>
-              </div>
-            </a>
-
-          </div>
-          <!-- Quick Action Callout Ribbon -->
-          <div
-            class="p-space-lg rounded-xl bg-surface-container flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
-            <div class="flex items-center gap-space-md">
+          <h2 class="font-headline-lg text-headline-lg text-primary tracking-tight">Contact</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Connect directly through professional channels and engineering networks. No lengthy forms or
+            intermediaries.
+          </p>
+        </div>
+        <!-- Contact Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+          <!-- LinkedIn -->
+          <a class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between"
+            href="https://www.linkedin.com/in/felipetala/" rel="noopener noreferrer" target="_blank">
+            <div class="flex flex-col gap-space-sm">
               <div
-                class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary-fixed">
-                <span class="material-symbols-outlined text-[20px]">bolt</span>
+                class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:text-tertiary-fixed transition-colors">
+                <span class="material-symbols-outlined text-[28px]">work</span>
               </div>
-              <div>
-                <p class="font-headline-sm text-headline-sm text-primary">Do you have a hardware project in mind?</p>
-                <p class="font-body-sm text-body-sm text-on-surface-variant">Schematic design, complex PCB routing, or debugging with bench instrumentation.</p>
-              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">PROFESSIONAL
+                NETWORK</span>
+              <h3
+                class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed transition-colors">
+                LinkedIn</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Corporate connections, work experience, and
+                technical hardware publications.</p>
             </div>
-            <a class="px-space-lg py-3 rounded bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-label-md font-bold uppercase tracking-wider hover:bg-primary transition-colors text-center"
-              href="mailto:felipetala.eng@gmail.com?subject=Consulta%20Proyecto%20Electronica">
-              Iniciar Conversación
-            </a>
-          </div>
+            <div class="pt-space-md mt-space-md flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-on-surface uppercase">CONNECT</span>
+              <span
+                class="material-symbols-outlined text-tertiary-fixed text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+          <!-- GitHub -->
+          <a class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between"
+            href="" rel="noopener noreferrer" target="_blank">
+            <div class="flex flex-col gap-space-sm">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:text-tertiary-fixed transition-colors">
+                <span class="material-symbols-outlined text-[28px]">code</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">REPOSITORIES
+                HARDWARE</span>
+              <h3
+                class="font-headline-sm text-headline-sm text-primary group-hover:text-tertiary-fixed transition-colors">
+                GitHub</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Gerber Manufacturing Files,
+                KiCAD/Altium schematics and firmware in C/C++.</p>
+            </div>
+            <div class="pt-space-md mt-space-md flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-on-surface uppercase">REPOSITORY</span>
+              <span
+                class="material-symbols-outlined text-tertiary-fixed text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </div>
+          </a>
+          <!-- Email -->
+          <a class="p-space-lg rounded-xl bg-surface-container-low hover:bg-surface-container transition-all group flex flex-col justify-between"
+            href="mailto:felipetala.eng@gmail.com">
+            <div class="flex flex-col gap-space-sm">
+              <div
+                class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:text-secondary-fixed transition-colors">
+                <span class="material-symbols-outlined text-[28px]">mail</span>
+              </div>
+              <span class="font-label-sm text-label-sm text-on-surface-variant uppercase mt-1">DIRECT EMAIL</span>
+              <h3
+                class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary-fixed transition-colors">
+                Email</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Design proposals, consulting contracts, or
+                architectural reviews.</p>
+            </div>
+            <div class="pt-space-md mt-space-md flex items-center justify-between">
+              <span class="font-label-sm text-label-sm text-on-surface uppercase">SEND MESSAGE</span>
+              <span
+                class="material-symbols-outlined text-secondary-fixed text-[18px] group-hover:translate-x-1 transition-transform">send</span>
+            </div>
+          </a>
+
         </div>
-      </section>
+        <!-- Quick Action Callout Ribbon -->
+        <div
+          class="p-space-lg rounded-xl bg-surface-container flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+          <div class="flex items-center gap-space-md">
+            <div
+              class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center text-secondary-fixed">
+              <span class="material-symbols-outlined text-[20px]">bolt</span>
+            </div>
+            <div>
+              <p class="font-headline-sm text-headline-sm text-primary">Do you have a hardware project in mind?</p>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">Schematic design, complex PCB routing, or
+                debugging with bench instrumentation.</p>
+            </div>
+          </div>
+          <a class="px-space-lg py-3 rounded bg-secondary-fixed text-on-secondary-fixed font-headline-sm text-label-md font-bold uppercase tracking-wider hover:bg-primary transition-colors text-center"
+            href="mailto:felipetala.eng@gmail.com?subject=Consulta%20Proyecto%20Electronica">
+            Iniciar Conversación
+          </a>
+        </div>
+      </div>
+    </section>
     </div>
   </main>
   <footer class="w-full bg-surface-container-lowest">
@@ -799,7 +845,8 @@
               class="font-headline-sm text-headline-sm text-primary">Felipe Tala</span><span
               class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container-high text-tertiary-fixed">B.S.
               EE</span></div>
-          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Lorem ipsum, dolor sit amet consectetur adipisicing elit. In, dolor?</p>
+          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. In, dolor?</p>
           <div class="flex items-center gap-space-md mt-space-xs"><span
               class="font-code-md text-code-md text-on-surface-variant">KANSAS, US</span></div>
         </div>
@@ -814,9 +861,9 @@
               class="font-label-md text-label-md text-on-surface-variant hover:text-primary uppercase transition-colors"
               data-path="contacto" href="#contacto">CONTACT</a></div>
 
-          </div>
         </div>
       </div>
+    </div>
     </div>
   </footer>
 </body>
